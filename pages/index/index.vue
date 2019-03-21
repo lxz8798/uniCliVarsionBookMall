@@ -1,7 +1,7 @@
 <template>
 	<view class="content">
 		<!-- NavBar-顶部bar -->
-		<nav-bar :fixed="false" back left-text="Back" title="场景管理" iconTwo="settings" font-color="#fff" background-color="linear-gradient(to right, rgb(82, 102, 163), rgb(88, 166, 255))"></nav-bar>
+		<nav-bar :fixed="false" back left-text="Back" title="书海" iconTwo="settings" font-color="#fff" background-color="linear-gradient(to right, rgb(82, 102, 163), rgb(88, 166, 255))"></nav-bar>
 		<!-- 轮播 -->
 		<banner-swiper></banner-swiper>
 		<!-- <homePage v-if="page_code=='home'"></homePage>
@@ -17,7 +17,7 @@
 <script>
 import bannerSwiper from '../../components/swiper/index.vue';
 export default {
-	components: {bannerSwiper},
+	components: {bannerSwiper, tabList},
 	data() {
 		return {
 			background: ['color1', 'color2', 'color3'],

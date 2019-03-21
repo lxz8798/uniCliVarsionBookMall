@@ -16,6 +16,7 @@
 	export default {
 		data(){
 			return {
+				currentIndex: 1,
 				imgList:[
 				'http://g.hiphotos.baidu.com/image/h%3D300/sign=1a582ad2f5edab646b724bc0c736af81/8b13632762d0f7032fd8c1c506fa513d2697c545.jpg',
 				'http://g.hiphotos.baidu.com/image/h%3D300/sign=bd3f019f20dda3cc14e4be2031e93905/b03533fa828ba61e5eda502f4f34970a304e59fe.jpg',
@@ -23,6 +24,9 @@
 				'http://a.hiphotos.baidu.com/image/h%3D300/sign=78ff232442086e0675a8394b32087b5a/023b5bb5c9ea15cef6b55f1cb8003af33a87b248.jpg',
 				'http://d.hiphotos.baidu.com/image/h%3D300/sign=d31aee36da2a28345ca6300b6bb5c92e/e61190ef76c6a7ef7d58560df3faaf51f3de669b.jpg']
 			}
+		},
+		methods: {
+			handleChange() {}
 		}
 	}	
 </script>

@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
 	state: {
-		loading: '0',
+		loading: '0' || false,
 		base_url: "https://cnodejs.org/api/v1",
 		list: [],
 		detail: ''
@@ -14,10 +14,10 @@ const store = new Vuex.Store({
 		switch_loading(state, status) {
 			console.log(status)
 			if (status == "change") {
-				if (state.loading == '0') {
-					state.loading = '1'
+				if (state.loading == '0' || state.loading == false) {
+					state.loading = '1' || true
 				} else {
-					state.loading = '0'
+					state.loading = '0' || false
 				}
 			} else {
 				state.loading = status;

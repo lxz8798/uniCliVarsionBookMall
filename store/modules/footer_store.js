@@ -24,7 +24,7 @@ export default {
 			},
 			
 		],
-		now_page_index:1,
+		now_page_index: 1,
 	},
 	mutations:{
 		change_nav_list(state,data){

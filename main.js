@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import App from './App'
 
-Vue.config.productionTip = false;
+import '@/static/css/reset.scss'
+import '@/static/iconfont/iconfont.css' //使用字体图标
+import '@/static/js/constant.js'
 
-import store from "./store";
+Vue.config.productionTip = false;
 
 /*
 	注册全局组件 loading
@@ -18,25 +20,14 @@ import store from "./store";
 import fr_loading from './components/loading/loading.vue';
 import nav_bar from './components/cmd-nav-bar/cmd-nav-bar.vue';
 import footer_nav from "./components/footer/footer_nav.vue";
+
 Vue.component('fr-loading',fr_loading);
 Vue.component('nav-bar',nav_bar);
 Vue.component('footer-nav',footer_nav);
 
-Vue.prototype.$loading = function(status){
-	if(status){
-		if(status=="1"||status=="0"){
-			
-			store.commit("switch_loading",status)
-		}else{
-			console.log("输入的参数 有误，应为 0/1");
-		}
-	}else{
-		store.commit("switch_loading",'change')
-	}
-};
-
 // 状态数据
 Vue.prototype.$store = store;
+import store from "./store";
 
 // 请求模块
 import $ajax from "./tools/ajax.js";
@@ -46,9 +37,22 @@ Vue.prototype.$ajax = $ajax;
 import upload_img from "./tools/upload_img.js";
 Vue.prototype.$Uploader = upload_img;
 
+Vue.prototype.$loading = function(status){
+	if(status){
+		if(status=="1" || status=="0"){
+			store.commit("switch_loading",status)
+		}else{
+			console.log("输入的参数 有误，应为 0/1");
+		}
+	}else{
+		store.commit("switch_loading",'change')
+	}
+};
+
 App.mpType = 'app';
 
 const app = new Vue({
+	store,
 	...App
 })
 app.$mount()
