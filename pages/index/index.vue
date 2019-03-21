@@ -4,6 +4,9 @@
 		<nav-bar :fixed="false" back left-text="Back" title="场景管理" iconTwo="settings" font-color="#fff" background-color="linear-gradient(to right, rgb(82, 102, 163), rgb(88, 166, 255))"></nav-bar>
 		<!-- 轮播 -->
 		<banner-swiper></banner-swiper>
+		<!-- <homePage v-if="page_code=='home'"></homePage>
+		<pageTwo v-if="page_code=='publish'"></pageTwo>
+		<pageThree v-if="page_code=='my'"></pageThree> -->
 		<!-- FooterBar-底部bar -->
 		<footer-nav></footer-nav>
 		<!-- Loading -->
@@ -25,7 +28,14 @@ export default {
 		}
 	},
 	onLoad() {
+// 		console.log('index onload')
+// 		this.$store.dispatch('get_data')
 	},
+// 	computed: {
+// 		page_code() {
+// 			return this.$store.state.footer_store.footer_nav[this.$store.state.footer_store.now_page_index].name_code;
+// 		}
+// 	},
 	methods: {
 		/**
 		 * @Description: loading

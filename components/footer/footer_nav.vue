@@ -13,7 +13,7 @@
 	export default {
 		data() {
 			return {
-				tabIndex: 1,
+				tabIndex: 0,
 			};
 		},
 		methods:{
