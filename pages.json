@@ -3,23 +3,22 @@
 		{
 		    "path" : "pages/index/index",
 		    "style" : {
-		        "navigationBarTitleText" : "uni-app"
+		        "navigationBarTitleText" : "home"
 		    }
 		},
 		{
-		    "path" : "pages/detail/detail",
-		    "style" : {
-				"usingComponents" : {
-				    "my-html" : "/wxcomponents/myhtml/myhtml"
+		    "path" : "pages/personalcenter/index",
+				"style" : {
+				    "navigationBarTitleText" : "center"
 				}
-			}
 		}
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
+		"navigationBarTitleText": "导航",
 		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"backgroundColor": "#F8F8F8",
+		"navigationStyle" : "custom"
 	},
 	"condition" : { //模式配置，仅开发期间生效
 		"current": 0, //当前激活的模式(list 的索引项)

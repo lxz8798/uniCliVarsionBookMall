@@ -232,7 +232,6 @@
     height: 92upx;
     line-height: 92upx;
     color: $cmd-nav-bar-color;
-    background: transparent;
     box-shadow: 0 6upx 6upx -3upx rgba(0, 0, 0, .2);
 
     /*所有都垂直占比*/

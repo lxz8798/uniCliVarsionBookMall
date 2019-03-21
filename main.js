@@ -16,7 +16,12 @@ import store from "./store";
 */
 
 import fr_loading from './components/loading/loading.vue';
+import nav_bar from './components/cmd-nav-bar/cmd-nav-bar.vue';
+import footer_nav from "./components/footer/footer_nav.vue";
 Vue.component('fr-loading',fr_loading);
+Vue.component('nav-bar',nav_bar);
+Vue.component('footer-nav',footer_nav);
+
 Vue.prototype.$loading = function(status){
 	if(status){
 		if(status=="1"||status=="0"){

@@ -4,20 +4,24 @@
     "iPhone",
     "iPad"
   ],
-  "id": "",
+  "id": "__UNI__111E9AA",
   "name": "firstApp",
   "version": {
     "name": "1.0.0",
     "code": "100"
   },
-  "description": "",
+  "description": "this's my firstApp",
   "launch_path": "__uniappservice.html",
   "developer": {
     "name": "",
     "email": "",
     "url": ""
   },
-  "permissions": {},
+  "permissions": {
+    "OAuth": {},
+    "Push": {},
+    "Share": {}
+  },
   "plus": {
     "useragent": {
       "value": "uni-app appservice",

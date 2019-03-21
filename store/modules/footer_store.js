@@ -3,14 +3,14 @@ export default {
 		footer_nav:[
 			{
 				name:'书架',
-				name_code:'home',
+				name_code:'books',
 				icon:'/static/footer_icon/app_tabbar_boox.png',
 				select_icon:'/static/footer_icon/app_tabbar_boox_active.png',
 				size:'small'
 			},
 			{
 				name:'书城',
-				name_code:'publish',
+				name_code:'mall',
 				icon:'/static/footer_icon/app_tabbar_shop.png',
 				select_icon:'/static/footer_icon/app_tabbar_shop_active.png',
 				size:'big'
@@ -24,7 +24,7 @@ export default {
 			},
 			
 		],
-		now_page_index:0,
+		now_page_index:1,
 	},
 	mutations:{
 		change_nav_list(state,data){
