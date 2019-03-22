@@ -17,7 +17,7 @@ export default {
 			},
 			{
 				name:'我的',
-				name_code:'my',
+				name_code:'center',
 				icon:'/static/footer_icon/app_tabbar_my.png',
 				select_icon:'/static/footer_icon/app_tabbar_my_active.png',
 				size:'small'

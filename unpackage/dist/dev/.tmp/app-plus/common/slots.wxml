@@ -1,1 +1,3 @@
+<import src="/components/cmd-nav-bar/cmd-nav-bar.vue.wxml" />
+<import src="/components/swiper/index.vue.wxml" />
 

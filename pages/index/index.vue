@@ -1,12 +1,11 @@
 <template>
 	<view class="content">
-		<!-- NavBar-顶部bar -->
-		<nav-bar :fixed="false" back left-text="Back" title="书海" iconTwo="settings" font-color="#fff" background-color="linear-gradient(to right, rgb(82, 102, 163), rgb(88, 166, 255))"></nav-bar>
-		<!-- 轮播 -->
-		<banner-swiper></banner-swiper>
-		<!-- <homePage v-if="page_code=='home'"></homePage>
-		<pageTwo v-if="page_code=='publish'"></pageTwo>
-		<pageThree v-if="page_code=='my'"></pageThree> -->
+		<!-- 书架 -->
+		<books v-if="page_code=='books'"></books>
+		<!-- 书海 -->
+		<mall v-if="page_code=='mall'"></mall>
+		<!-- 个人中心 -->
+		<center v-if="page_code=='center'"></center>
 		<!-- FooterBar-底部bar -->
 		<footer-nav></footer-nav>
 		<!-- Loading -->
@@ -15,9 +14,16 @@
 </template>
 
 <script>
-import bannerSwiper from '../../components/swiper/index.vue';
+import center from '../personalcenter/index.vue';
+import mall from '../homepage/index.vue';
+import books from '../books/index.vue';
+// import bannerSwiper from '../../components/swiper/index.vue';
 export default {
-	components: {bannerSwiper, tabList},
+	components: {
+		books,
+		mall,
+		center
+	},
 	data() {
 		return {
 			background: ['color1', 'color2', 'color3'],
@@ -31,11 +37,11 @@ export default {
 // 		console.log('index onload')
 // 		this.$store.dispatch('get_data')
 	},
-// 	computed: {
-// 		page_code() {
-// 			return this.$store.state.footer_store.footer_nav[this.$store.state.footer_store.now_page_index].name_code;
-// 		}
-// 	},
+	computed: {
+		page_code() {
+			return this.$store.state.footer_store.footer_nav[this.$store.state.footer_store.now_page_index].name_code;
+		}
+	},
 	methods: {
 		/**
 		 * @Description: loading

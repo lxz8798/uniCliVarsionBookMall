@@ -28,7 +28,7 @@ page {
   background-color: #fff;
 }
 .header {
-  background-color: #ff6364;
+  background-color: #58a6ff;
   width: 92%;
   height: 30vw;
   padding: 0 4%;
@@ -68,9 +68,15 @@ page {
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
-      -webkit-flex-flow: wrap;
-          -ms-flex-flow: wrap;
-              flex-flow: wrap;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: start;
+      -webkit-justify-content: flex-start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
       padding-left: 30rpx;
 }
 .header .userinfo .info .username {
@@ -87,7 +93,8 @@ page {
         -webkit-align-items: center;
             -ms-flex-align: center;
                 align-items: center;
-        padding: 0 20rpx;
+        margin-top: 10rpx;
+        padding: 5rpx 20rpx;
         height: 40rpx;
         color: #fff;
         background-color: rgba(0, 0, 0, 0.1);
@@ -109,7 +116,7 @@ page {
   background-color: #eee;
 }
 .orders {
-  background-color: #ff6364;
+  background-color: #58a6ff;
   width: 92%;
   height: 11vw;
   padding: 0 4%;

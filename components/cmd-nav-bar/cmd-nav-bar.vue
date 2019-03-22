@@ -2,23 +2,26 @@
   <view :class="fixed ? 'nav-bar-fixed' : ''" :style="setBackgroundColor">
     <view class="status-bar"></view>
     <view class="cmd-nav-bar">
+			<!-- 左 -->
       <view class="cmd-nav-bar-left">
         <view v-if="leftTitle" class="cmd-nav-bar-left-title" :style="'color:'+setFontColor">{{leftTitle}}</view>
         <view v-if="back && !leftTitle || iconOne && !leftTitle " @tap="$_iconOneClick" class="cmd-nav-bar-left-icon">
-          <cmd-icon :type="back ?'chevron-left' : iconOne" size="24" :color="setFontColor"></cmd-icon>
+          <new-icon :type="back ?'chevron-left' : iconOne" :color="setFontColor" :icon="iconLeft"></new-icon>
         </view>
         <text v-if="leftText && !leftTitle" @tap="$_leftTextClick" :style="'color:'+setFontColor">{{leftText}}</text>
       </view>
+			<!-- 中 -->
       <view v-if="!leftTitle" class="cmd-nav-bar-title" :style="'color:'+setFontColor">{{title}}</view>
+			<!-- 右 -->
       <view class="cmd-nav-bar-right">
         <view v-if="iconThree && iconFour && !rightText" @tap="$_iconFourClick" class="cmd-nav-bar-right-icon" style="margin-left: 0;">
-          <cmd-icon :type="iconFour" size="24" :color="setFontColor"></cmd-icon>
+          <new-icon :type="iconFour" :color="setFontColor" :icon="iconRIght"></new-icon>
         </view>
         <view v-if="iconTwo && iconThree" @tap="$_iconThreeClick" class="cmd-nav-bar-right-icon">
-          <cmd-icon :type="iconThree" size="24" :color="setFontColor"></cmd-icon>
+          <new-icon :type="iconThree" :color="setFontColor"></new-icon>
         </view>
         <view v-if="iconTwo" @tap="$_iconTwoClick" class="cmd-nav-bar-right-icon">
-          <cmd-icon :type="iconTwo" size="24" :color="setFontColor"></cmd-icon>
+          <new-icon :type="iconTwo" :color="setFontColor"></new-icon>
         </view>
         <text v-if="rightText" @tap="$_rightTextClick" class="cmd-nav-bar-right-text" :style="(rightColor != '' ? 'color:'+rightColor : 'color:'+setFontColor)">{{rightText}}</text>
       </view>
@@ -27,14 +30,14 @@
 </template>
 
 <script>
-  import cmdIcon from "../cmd-icon/cmd-icon.vue"
   export default {
     name: 'cmd-nav-bar',
-
-    components: {
-      cmdIcon
-    },
-
+		data() {
+			return {
+				iconLeft: "&#xe613;",
+				iconRIght: "&#xe605;"
+			}
+		},
     props: {
       /**
        * 固定到页面顶部
@@ -78,6 +81,13 @@
         type: String,
         default: ''
       },
+			/**
+			 * 中间表单
+			 */
+			contentInput: {
+				type: String,
+				default: ''
+			},
       /**
        * 左侧显示标题，不可显示左侧文字图标
        */
