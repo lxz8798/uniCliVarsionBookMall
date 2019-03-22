@@ -1,6 +1,7 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import footer_store from "./modules/footer_store.js"
+import Vue from 'vue';
+import Vuex from 'vuex';
+import footer_store from "./modules/footer_store.js";
+ 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
@@ -11,18 +12,11 @@ const store = new Vuex.Store({
 		detail: ''
 	},
 	mutations: {
-		switch_loading(state, status) {
-			console.log(status)
-			if (status == "change") {
-				if (state.loading == '0' || state.loading == false) {
-					state.loading = '1' || true
-				} else {
-					state.loading = '0' || false
-				}
-			} else {
-				state.loading = status;
-			}
-
+		/**
+		 * @name 是否显示全局组件loading
+		 */
+		switch_loading(state){
+			state.loading = !state.loading
 		},
 		update_list(state, data) {
 			state.list = data

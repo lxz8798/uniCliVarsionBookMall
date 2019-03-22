@@ -1,5 +1,6 @@
 <script>
 	export default {
+		// 初始化完成触发，只触发一次
 		onLaunch: function () {
 			
 		},

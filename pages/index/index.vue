@@ -9,7 +9,7 @@
 		<!-- FooterBar-底部bar -->
 		<footer-nav></footer-nav>
 		<!-- Loading -->
-		<fr-loading></fr-loading>
+		<!-- <fr-loading></fr-loading> -->
 	</view>
 </template>
 

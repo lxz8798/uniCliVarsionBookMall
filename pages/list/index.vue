@@ -4,23 +4,33 @@
 		<scroll-view class="purchase-body" scroll-y="true" @scrolltolower="scrolltolower" @scrolltoupper="scrolltoupper" @scroll="scroll" @touchstart="touchstart" @touchend="touchend">
 			<my-unit v-for="(item,index) in 10" :key="index" :info="item"></my-unit>
 		</scroll-view>
-		<my-loading></my-loading>
+		<!-- <my-loading></my-loading> -->
 	</view>
 </template>
 <script>
 	import myTabs from '@/components/myTabs/myTabs.vue'
 	import myUnit from '@/components/myUnits/purchaseUnit/unit.vue'
 	import myPull from '@/static/js/myPull.js'
-	import myLoading from '@/components/myLoading/myLoading.vue'
 	export default {
-		components:{myTabs,myUnit,myLoading},
+		components:{
+			myTabs,
+			myUnit,
+			myPull
+		},
 		data() {
 			return {
 				
 			}
 		},
 		onLoad(){
-			this.refresh();
+			// this.refresh();
+		},
+		onReady() {
+			console.log("onReady")
+			// this.$store.commit('switch_loading');
+		},
+		mounted() {
+			console.log("mounted");
 		},
 		methods: {
 			/**
@@ -46,8 +56,6 @@
 			scrolltoupper(){
 				
 			},
-			
-			
 			/**
 			 * @name 改变tab
 			 * @param val 索引

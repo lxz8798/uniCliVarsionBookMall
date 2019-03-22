@@ -5,15 +5,29 @@
 	<!-- 轮播 -->
 	<banner-swiper></banner-swiper>
 	<!-- 列表 -->
+	<tab-list></tab-list>
+	<!-- loading -->
+	<loading></loading>
 </div>
 </template>
 
 <script>
 import bannerSwiper from '../../components/swiper/index.vue';
+import tabList from '../list/index.vue';
 export default {
 	components: {
-		bannerSwiper
+		bannerSwiper,
+		tabList
 	},
+	onLoad(){
+		this.refresh();
+	},
+// 	onReady() {
+// 		console.log("onReady")
+// 	},
+// 	mounted() {
+// 		console.log("mounted")
+// 	},
 	data() {
 		return {}
 	},

@@ -15,13 +15,13 @@
 			<!-- 右 -->
       <view class="cmd-nav-bar-right">
         <view v-if="iconThree && iconFour && !rightText" @tap="$_iconFourClick" class="cmd-nav-bar-right-icon" style="margin-left: 0;">
-          <new-icon :type="iconFour" :color="setFontColor" :icon="iconRIght"></new-icon>
+          <new-icon :type="iconFour" :color="setFontColor" @clickTest="$_leftTextClick"></new-icon>
         </view>
         <view v-if="iconTwo && iconThree" @tap="$_iconThreeClick" class="cmd-nav-bar-right-icon">
           <new-icon :type="iconThree" :color="setFontColor"></new-icon>
         </view>
         <view v-if="iconTwo" @tap="$_iconTwoClick" class="cmd-nav-bar-right-icon">
-          <new-icon :type="iconTwo" :color="setFontColor"></new-icon>
+          <new-icon :type="iconTwo" :color="setFontColor" size="20" :icon="iconRIght"></new-icon>
         </view>
         <text v-if="rightText" @tap="$_rightTextClick" class="cmd-nav-bar-right-text" :style="(rightColor != '' ? 'color:'+rightColor : 'color:'+setFontColor)">{{rightText}}</text>
       </view>
@@ -35,7 +35,7 @@
 		data() {
 			return {
 				iconLeft: "&#xe613;",
-				iconRIght: "&#xe605;"
+				iconRIght: "&#xe616;"
 			}
 		},
     props: {
@@ -153,7 +153,7 @@
       /**
        * 设置背景颜色
        */
-      setBackgroundColor() {
+      setBackgroundColor(data) {
         let backgroundColor = '#fff';
         if (this.backgroundColor != '') {
           backgroundColor = `background: ${this.backgroundColor};`;
@@ -166,7 +166,7 @@
       /**
        * 图标一点击事件
        */
-      $_iconOneClick() {
+      $_iconOneClick(data) {
         if (this.back) {
           uni.navigateBack()
         } else {

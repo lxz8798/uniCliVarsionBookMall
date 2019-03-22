@@ -41,7 +41,6 @@
         return `${this.size}px`
       }
     },
-
     methods: {
       $_click(e) {
         this.$emit('click',e)

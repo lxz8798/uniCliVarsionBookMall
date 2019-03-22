@@ -1,3 +1,12 @@
-<import src="/components/cmd-nav-bar/cmd-nav-bar.vue.wxml" />
+<import src="/components/navbar/index.vue.wxml" />
+<import src="/pages/books/index.vue.wxml" />
+<import src="/pages/homepage/index.vue.wxml" />
+<import src="/pages/personalcenter/index.vue.wxml" />
+<import src="/components/footer/index.vue.wxml" />
+<import src="/components/icon/index.vue.wxml" />
 <import src="/components/swiper/index.vue.wxml" />
+<import src="/pages/list/index.vue.wxml" />
+<import src="/components/myLoading/myLoading.vue.wxml" />
+<import src="/components/myTabs/myTabs.vue.wxml" />
+<import src="/components/myUnits/purchaseUnit/unit.vue.wxml" />
 

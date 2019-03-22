@@ -19,7 +19,7 @@
 		methods:{
 			change_nav(index){
 				this.tabIndex = index;
-				this.$store.commit("change_page",index)
+				this.$store.commit("change_page",index);
 			}
 		},
 		computed:{

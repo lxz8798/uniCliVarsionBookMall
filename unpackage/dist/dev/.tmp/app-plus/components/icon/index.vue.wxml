@@ -1,0 +1,1 @@
+<template name="2ba8255c"><rich-text bindtap="handleProxy" nodes="{{icon}}" data-eventid="{{'2ba8255c-0'}}" data-comkey="{{$k}}" class="_view 2ba8255c {{prefixClass}}" style=" {{('color:' + color + ';' + 'font-size:' + fontSize + ';')}}"></rich-text></template>
