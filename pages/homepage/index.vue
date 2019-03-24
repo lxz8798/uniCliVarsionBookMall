@@ -19,17 +19,14 @@ export default {
 		bannerSwiper,
 		tabList
 	},
-	onLoad(){
-		this.refresh();
-	},
-// 	onReady() {
-// 		console.log("onReady")
-// 	},
-// 	mounted() {
-// 		console.log("mounted")
-// 	},
 	data() {
-		return {}
+		return {
+			background: ['color1', 'color2', 'color3'],
+			indicatorDots: true,
+			autoplay: true,
+			interval: 2000,
+			duration: 500
+		}
 	},
 }
 </script>

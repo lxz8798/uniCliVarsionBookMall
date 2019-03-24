@@ -19,9 +19,7 @@
 				return this.modelData
 			},
 			formatBe(){
-				return this.modelData
-						?this.modelData.length>4?true:false
-						:false
+				return this.modelData ? this.modelData.length > 4 ? true : false :false
 			},
 			formatIndex(){
 				return this.initIndex

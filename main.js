@@ -17,7 +17,7 @@ Vue.config.productionTip = false;
 	'0' -->  隐藏
 */
 
-// import fr_loading from './components/loading/';
+import fr_loading from './components/loading/';
 import loading from '@/components/myLoading/myLoading.vue'
 import nav_bar from './components/navbar/';
 import footer_nav from "./components/footer/";
@@ -37,6 +37,13 @@ Vue.prototype.$ajax = $ajax;
 // 上传图片插件
 import upload_img from "./tools/upload_img.js";
 Vue.prototype.$Uploader = upload_img;
+
+Vue.prototype.$gotoPath = function(url) {
+	uni.navigateTo({
+		url: url,
+		animationType: "pop-in"
+	})
+}
 
 App.mpType = 'app';
 

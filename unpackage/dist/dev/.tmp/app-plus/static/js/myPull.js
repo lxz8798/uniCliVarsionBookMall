@@ -14,9 +14,22 @@ export default({getList="getList",listData="listData",page="page",initIndex="ini
 				[page]:1,
 				[initIndex]:0,
 				[modelData]:[
-					{label:"测试"},
-					{label:"测试"},
-					{label:"测试"},
+					{
+						label:"测试",
+						icon: ""
+					},
+					{
+						label:"测试",
+						icon: ""
+					},
+					{
+						label:"测试",
+						icon: ""
+					},
+					{
+						label:"测试",
+						icon: ""
+					},
 				]
 			}
 		},

@@ -20,7 +20,7 @@
         <view v-if="iconTwo && iconThree" @tap="$_iconThreeClick" class="cmd-nav-bar-right-icon">
           <new-icon :type="iconThree" :color="setFontColor"></new-icon>
         </view>
-        <view v-if="iconTwo" @tap="$_iconTwoClick" class="cmd-nav-bar-right-icon">
+        <view v-if="iconTwo" @tap="$_openSearch" class="cmd-nav-bar-right-icon">
           <new-icon :type="iconTwo" :color="setFontColor" size="20" :icon="iconRIght"></new-icon>
         </view>
         <text v-if="rightText" @tap="$_rightTextClick" class="cmd-nav-bar-right-text" :style="(rightColor != '' ? 'color:'+rightColor : 'color:'+setFontColor)">{{rightText}}</text>
@@ -163,6 +163,12 @@
     },
 
     methods: {
+			/**
+			 * 进入搜索页
+			 */
+			$_openSearch() {
+				this.$gotoPath("/pages/search/index");
+			},
       /**
        * 图标一点击事件
        */

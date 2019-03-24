@@ -27,7 +27,6 @@
 				this.$loading()
 			},
 			get_detail(id){
-				
 				uni.navigateTo({
 					url:"/pages/detail/detail?id="+id
 				})

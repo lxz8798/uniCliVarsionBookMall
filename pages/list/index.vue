@@ -22,16 +22,6 @@
 				
 			}
 		},
-		onLoad(){
-			// this.refresh();
-		},
-		onReady() {
-			console.log("onReady")
-			// this.$store.commit('switch_loading');
-		},
-		mounted() {
-			console.log("mounted");
-		},
 		methods: {
 			/**
 			 * @name 获取列表

@@ -9,7 +9,6 @@
 		<!-- FooterBar-底部bar -->
 		<footer-nav></footer-nav>
 		<!-- Loading -->
-		<!-- <fr-loading></fr-loading> -->
 	</view>
 </template>
 
@@ -17,7 +16,6 @@
 import center from '../personalcenter/index.vue';
 import mall from '../homepage/index.vue';
 import books from '../books/index.vue';
-// import bannerSwiper from '../../components/swiper/index.vue';
 export default {
 	components: {
 		books,
@@ -33,9 +31,8 @@ export default {
 			duration: 500
 		}
 	},
-	onLoad() {
-// 		console.log('index onload')
-// 		this.$store.dispatch('get_data')
+	onReady() {
+		this.$store.commit('switch_loading');
 	},
 	computed: {
 		page_code() {
