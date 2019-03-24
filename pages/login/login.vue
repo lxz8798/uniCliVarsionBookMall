@@ -49,12 +49,13 @@
 	</view>
 </template>
 <script>
+	import {mapState,mapMutations} from 'vuex'
 	export default {
 		data() {
 			const isUni = typeof(uni) !== 'undefined'
 			return {
-				username: '',
-				userpwd: '',
+				username: 'testUsername',
+				userpwd: '123456',
 				pwdType: 'password',
 				imgInfo: {
 					head: isUni ? '/static/head.png' : require('./images/head.png'),
@@ -68,7 +69,22 @@
 				}
 			}
 		},
+		computed: {
+			...mapState([
+				"hasLogin",
+				"userInfo"
+			])
+		},
+		onLoad() {
+			console.log("onload")
+		},
+		onReady() {
+		},
 		methods: {
+			...mapMutations([
+				"CENTER_USERINFO",
+				"COMMIT_LOGIN"
+			]),
 			inputUsername(e) {
 				this.username = e.target.value
 			},
@@ -82,16 +98,32 @@
 				this.pwdType = this.pwdType === 'text' ? 'password' : 'text'
 			},
 			login() {
-				console.log('username:' + this.username + ',pwd:' + this.userpwd)
+				// let userinfo = sessionStorage.userInfo ? sessionStorage.userInfo : undefined;
+				let userinfo;
+				uni.getStorage({
+					key: "userInfo",
+					success: function(res) {
+						userinfo = res.data ? res.data : undefined;
+					}
+				})
+				this.CENTER_USERINFO({username:this.username, password: this.userpwd});
+				this.COMMIT_LOGIN(true);
+				this.$store.commit("change_page",2);
+				uni.navigateTo({
+					url:'/pages/personalcenter/index',
+					animationType: "pop-in"
+				})
 			},
 			findPwd() {
 				uni.navigateTo({
-					url:'/pages/find-pwd/find-pwd'
+					url:'/pages/find-pwd/find-pwd',
+					animationType: "pop-in"
 				})
 			},
 			goReg() {
 				uni.navigateTo({
-					url:'/pages/reg/reg'
+					url:'/pages/reg/reg',
+					animationType: "pop-in"
 				})
 			},
 			thirdLogin(type) {

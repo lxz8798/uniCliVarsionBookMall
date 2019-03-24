@@ -4,7 +4,12 @@
     "pages/search/index",
     "pages/personalcenter/index",
     "pages/homepage/index",
-    "pages/books/index"
+    "pages/books/index",
+    "pages/guide/index",
+    "pages/login/login",
+    "pages/find-pwd/find-pwd",
+    "pages/reg/reg",
+    "pages/reg-pwd/reg-pwd"
   ],
   "subPackages": [],
   "window": {

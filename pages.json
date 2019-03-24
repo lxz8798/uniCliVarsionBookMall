@@ -28,6 +28,10 @@
 			"style": {}
 		},
 		{
+			"path": "pages/guide/index",
+			"style": {}
+		},
+		{
 			"path": "pages/login/login",
 			"style": {
 				"backgroundColor": "#f5f6f8",

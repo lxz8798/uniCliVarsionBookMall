@@ -1,0 +1,8 @@
+// 用户行为
+const CENTER_USERINFO = "CENTER_USERINFO";
+const COMMIT_LOGIN = "COMMIT_LOGIN";
+
+export default {
+	CENTER_USERINFO,
+	COMMIT_LOGIN
+}

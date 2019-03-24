@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import footer_store from "./modules/footer_store.js";
+import user_center from "./modules/user_center.js";
+import types from "./types.js";
  
 Vue.use(Vuex)
 
@@ -9,9 +11,13 @@ const store = new Vuex.Store({
 		loading: '0' || false,
 		base_url: "https://cnodejs.org/api/v1",
 		list: [],
-		detail: ''
+		detail: '',
+		hasLogin: false
 	},
 	mutations: {
+		[types.COMMIT_LOGIN](state, value) {
+			state.hasLogin = value
+		},
 		/**
 		 * @name 是否显示全局组件loading
 		 */
@@ -65,7 +71,8 @@ const store = new Vuex.Store({
 		}
 	},
 	modules: {
-		footer_store
+		footer_store,
+		user_center
 	}
 })
 

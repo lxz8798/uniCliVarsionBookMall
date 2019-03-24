@@ -53,9 +53,11 @@
 				<image class="to" src="../../static/HM-PersonalCenter/to.png"></image>
 			</view>
 		</view>
+		<footer-nav></footer-nav>
 	</view>
 </template>
 <script>
+import {mapState,mapMutations} from 'vuex';
 export default {
 	data() {
 		return {
@@ -67,8 +69,8 @@ export default {
 			//#endif
 			userinfo: {
 				face: '../../static/HM-PersonalCenter/face.jpeg',
-				username: 'VIP会员10240',
-				integral: '1435'
+				username: 'testUsername',
+				integral: '123456'
 			},
 			orderTypeLise: [
 				//name-标题 icon-图标 badge-角标
@@ -96,11 +98,25 @@ export default {
 			]
 		};
 	},
-	onLoad() {
+	computed: {
+		...mapState(["hasLogin"])
+	},
+	mounted() {
 		//加载
 		// this.init();
+		this.notLogin();
 	},
 	methods: {
+		notLogin() {
+			let userinfo = sessionStorage.userInfo ? sessionStorage.userInfo : undefined;
+			if(this.hasLogin == false && userinfo == undefined) {
+				uni.navigateTo({
+					url: "/pages/login/login"
+				})
+			} else {
+				return
+			}
+		},
 		// 			init() {
 		// 				//用户信息
 		// 				this.userinfo={
